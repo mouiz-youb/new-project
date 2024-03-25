@@ -4,3 +4,7 @@ h1{
 body{
     background-color: blueviolet;
 }
+ul{
+    color: teal;
+    background-color: rgb(91, 91, 19);
+}
