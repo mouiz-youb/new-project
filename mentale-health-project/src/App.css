@@ -1,0 +1,542 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+.contianer-of-the-role-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cercle1 {
+  position: absolute;
+  right: 0%;
+  width: 150px;
+  top: -55px;
+}
+.cercle2 {
+  position: absolute;
+  left: -1%;
+  width: 150px;
+  top: 200px;
+}
+.cercle3 {
+  position: absolute;
+  width: 410px;
+  top: 475px;
+  right: 0;
+}
+.container-ofthetitel {
+  position: relative;
+}
+.backgroundtitel {
+  /* z-index: -1; */
+}
+.titel {
+  color: #190482;
+  font-size: 40px;
+  text-align: center;
+  z-index: 1;
+  position: absolute;
+  left: 300px;
+  bottom: 170px;
+}
+.nedjma1,
+.nedjma2 {
+  width: 50px;
+  position: absolute;
+}
+.nedjma1 {
+  top: 100px;
+  right: 210px;
+}
+.nedjma2 {
+  top: 185px;
+  left: 230px;
+}
+.container-of-moonies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  top: 250px;
+  left: -45%;
+}
+.passion,
+.doctor {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+.passion {
+  right: 255px;
+}
+.doctor {
+  left: 300px;
+}
+.paisson-image,
+.doctor-image {
+  position: absolute;
+  width: 180px;
+}
+.text-passion, .text-doctor{
+  position: absolute;
+  font-size: 30px;
+  color: #407BFF;
+  top: 130px;
+}
+.contianerlogin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 1260px;
+  position: relative;
+  height: 590px;
+  margin:0px 8px   ;
+}
+.cerclelogin2{
+    width: 170px;
+    position: absolute;
+    left: -35px;
+    transform: rotateZ(5deg);
+}
+.cerclelogin1{
+  width: 180px;
+  position: absolute;
+  top: 0%;
+  right: -10px;
+}
+/*  */
+.login-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  right: 235px;
+  height: 500px;
+  /* border: 2px solid; */
+  width: 50%;
+}
+.backlegend{
+  position: absolute;
+    top: -75px;
+    left: 90px;
+}
+.nedjmaloign1,.nedjmaloign2{
+  position: absolute;
+  width: 50px;
+}
+.nedjmaloign1{
+  top: 75px;
+  left: 140px;
+}
+.nedjmaloign2{
+  top: 0px;
+  right: 170px;
+}
+.legend-login{
+  color: #190482;
+  font-size: 40px;
+  text-transform: capitalize;
+  position: absolute;
+  top: 30px;
+  left: 230px;
+  font-weight: bolder;
+}
+.how{
+  position: absolute;
+    top: 135px;
+    left: 185px;
+}
+.signlink{
+  color: #407BFF;
+  text-decoration: none;
+}
+.inputs-container{
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  top: 50px;
+}
+.login-input{
+  width: 320px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #407BFF;
+  border-radius: 10px;
+  box-shadow: -1px 4px 10px 0px rgb(0 0 0 / 3%);
+  padding-left: 10px;
+}
+.el3ayen{
+  width: 15px;
+  position: absolute;
+  top: 82px;
+  left: 285px;
+}
+.forget{
+  color: #407BFF;
+  font-size: 12px;
+  position: absolute;
+  top: 115px;
+    left: 225px;
+}
+.login-button{
+  width: 320px;
+  height: 40px;
+  background:  #407BFF;
+  background-color: #407BFF;
+  border: transparent;
+  border-radius: 10px;
+  color: white;
+}
+.or{
+  position: absolute;
+  top: 190px;
+  font-size: 12px;
+}
+.faceorgoolge{
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+.google-button{
+  width: 20px;
+}
+.facebook-button{
+  width: 11px;
+}
+.button-of-google{
+  width: 50%;
+  border: transparent;
+  border-radius:20px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+.button-of-facebook{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border: transparent;
+  background-color: #407BFF;
+  border-radius: 20px;
+}
+.mooni-of-login{
+  position: absolute;
+  width: 30%;
+  left: 810px;
+}
+/********************************* signup style ******************************/
+.title-container-ofsignup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  right: 280px;
+  bottom: 20px;
+  height: 500px;
+  width: 50%;
+  /* height: ; */
+}
+.verifecation-of-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  bottom: -50px;
+  gap: 10px;
+}
+.nedjmacontianer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+}
+.backsignup{
+  position: absolute;
+    bottom: 275px;
+}
+.signup-text{
+  color: #190482;
+  font-size: 40px;
+  position: absolute;
+  bottom: 415px;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.Nedjmasignup1,.Nedjmasignup2{
+  position: absolute;
+  width: 50px;
+}
+.Nedjmasignup1{
+  bottom: -25px;
+  right: -145px;
+  position: relative;
+}
+.Nedjmasignup2{
+  left: -135px;
+    position: relative;
+    bottom: 20px;
+}
+.login-link{
+  color: #407BFF;
+  text-decoration: none;
+}
+.input-container-signup{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  padding: 10px;
+  top: 70px;
+}
+.input-signup{
+  width: 320px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #407BFF;
+  border-radius: 10px;
+  box-shadow: -1px 4px 10px 0px rgb(0 0 0 / 3%);
+  padding-left: 10px;
+}
+.checkcon{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 255px;
+    gap: 10px;
+}
+.check-label{
+  font-size: 10px;
+}
+.signup{
+  width: 320px;
+    height: 40px;
+    border: 1px solid #407BFF;
+    border-radius: 40px;
+    background-color: #407BFF;
+    color: white;
+}
+.orsignupwith{
+  font-size: 12px;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+  top: -15px;
+  left: 120px;
+}
+.faceorgoolge1{
+  width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  position: relative;
+  bottom: 25px;
+}
+.el3ayen1{
+  width: 15px;
+  position: absolute;
+  bottom: 230px;
+  left: 290px;
+}
+/* the style of the post part  */
+/* 
+grid ::
+grid template columns bach ndiro t9sima ta3 a3mida ta3 la page
+grid template rows bach ndiro t9sima ta3 khanet  ta3 la page
+
+
+*/
+.posts-component{
+  display: grid;
+  width: 100%;
+  height: 100vh; /* to make it take all space in its parent div */
+  grid-template-columns: repeat(10,1fr);
+  grid-template-rows:repeat(3,1fr) ;
+  grid-gap: 10px;
+  grid-template-areas: "sidebar sidebar   post  post post post post  post  search search   "
+  "sidebar sidebar   post  post post post post  post search search   "
+  "sidebar sidebar   post  post post post post  post  search search   ";
+  text-transform: capitalize;
+}
+.side-bar{
+  border: 2px solid ;
+  grid-area: sidebar;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-template-areas: "profile profile " "ulsidebar ulsidebar" "settings settings";
+  gap: 10px;
+  padding: 10px;
+  z-index: 1;
+  /* background-image: linear-gradient(0deg,#FFFFFF,#407BFF,#819CC6); */
+  /* filter: blur(5px); */
+}
+
+/* .side-bar::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  z-index: -1;
+  position: absolute;
+} */
+li{
+  list-style: none;
+}
+.profile{
+  grid-area: profile;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contianer-image-profile{
+  border-radius: 70px;
+  border:2px solid  #190482;
+}
+.image-profile{
+  width: 80px;
+}
+.ulsidebar{
+  grid-area: ulsidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.pmenu{
+  padding: 0 25px;
+  color: #190482;
+  font-weight: bold;
+  font-family: 'Poppins'
+}
+.ulmenu{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.ulmenu::after{
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 25px;
+  border-radius: 20px;
+  z-index: 2;
+  left: -5px;
+  background-color: #6194FF;
+}
+.ulsettings{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+.paccount{
+  padding: 0 25px;
+  color: #190482;
+  font-weight: bold;
+  font-family: 'Poppins'
+}
+.settings{
+  grid-area: settings;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.lineof-li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  height: 25px;
+  padding: 0 10px;
+  transition: 1s all;
+}
+.linksof-sidebar{
+  text-decoration: none;
+}
+.logoofli{
+  background-color: #A7C7F9;
+    padding: 5px;
+    border-radius: 8px;
+    width: 25px;
+    height: 25px;
+    color: #819CC6;
+}
+.linksof-sidebar{
+  color: #819CC6;
+}
+.Middelpart{
+  border: 2px solid ;
+  grid-area: post;
+}
+.Endpart{
+  border: 2px solid ;
+  grid-area: search;
+}
+/* ==============================================  testu   =============================== */
+/* .listof-tast{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #5c0707;
+  color: #769ddc;
+  text-transform: capitalize;
+  padding: 0 20px;
+  gap: 15px;
+  
+}
+
+.list-itemof-test{
+  cursor: pointer;
+  transition:  2s all;
+}
+.list-itemof-test:hover{
+  color: #407BFF;
+}
+.listof-tast::after{
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  z-index: 2;
+  background-color: #769ddc;
+  left: 4px;
+  border-radius: 5px;
+} */
