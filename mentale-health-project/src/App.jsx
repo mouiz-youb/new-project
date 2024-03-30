@@ -3,11 +3,18 @@ import Thefirstpage from "./Authentication/Thefirstpage";
 import Loginpage from "./Authentication/Loginpage";
 import Signup from "./Authentication/Signup";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Test from "./Authentication/Test";
 import Posts from "./Thepostescomponent/Posts";
+import Test from "./Authentication/Test";
+import Testx from "./Authentication/Testx";
 import Sidebar from "./Thepostescomponent/Sidebar"
-import Endpart from "./Thepostescomponent/Endpart";
+// import Sidebarvx from "./Thepostescomponent/Sidebarvx"
+import Endpartpost from "./Thepostescomponent/Endpartpost";
 import Middelpart from "./Thepostescomponent/Middelpart";
+import Tasks from "./Thepostescomponent/Tasks"
+// import Posts from "./Thepostescomponent/Posts"
+import Podcast from "./Thepostescomponent/Podcast"
+import AichatMiddelpart from "./Thepostescomponent/AichatMiddelpart"
+import Sidebarvx from "./Thepostescomponent/Sidebarvx";
 function App() {
   return (
     <Router>
@@ -15,12 +22,17 @@ function App() {
         <Route exact path="/" element={<Thefirstpage />} />
         <Route path="/login" element={<Loginpage />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/testx" element={<Testx />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/sidebar" element={<Sidebar/>}/>
-        <Route path="/posts" element={<Posts/>}/>
-        <Route path="/middelpart" element={<Middelpart/>}/>
-        <Route path="/endpart" element={<Endpart/>}/>
+        <Route path="/Sidebarvx" element={<Sidebarvx/>}/>
+        <Route  exact path="/posts" element={<Posts/>}/>
+        <Route  exact path="/tasks" element={<Tasks/>}/>
+        <Route  exact path="/podcast" element={<Podcast/>}/>
+        {/* <Route  exact path="/podcast" element={</>}/>
+        <Route  exact path="/podcast" element={<Podcast/>}/> */}
+        {/* <Route path="/endpart" element={<Endpart/>}/> */}
       </Routes>
+      
     </Router>
   );
 }

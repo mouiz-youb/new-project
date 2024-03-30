@@ -402,15 +402,17 @@ grid template rows bach ndiro t9sima ta3 khanet  ta3 la page
   /* background-image: linear-gradient(0deg,#FFFFFF,#407BFF,#819CC6); */
   /* filter: blur(5px); */
 }
-
-/* .side-bar::before{
-  content: "";
-  width: 100%;
-  height: 100%;
-  filter: blur(5px);
-  z-index: -1;
-  position: absolute;
-} */
+.side-bar1{
+  border: 2px solid ;
+  grid-area: sidebar;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-template-areas: "profile profile "  "ulsidebar ulsidebar" "settings settings";
+  gap: 30px;
+  padding: 10px;
+  z-index: 1;
+}
 li{
   list-style: none;
 }
@@ -420,6 +422,19 @@ li{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 35px;
+}
+.ulsidebar{
+  grid-area: ulsidebar;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.settings{
+  grid-area: settings;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 .contianer-image-profile{
   border-radius: 70px;
@@ -428,14 +443,14 @@ li{
 .image-profile{
   width: 80px;
 }
-.ulsidebar{
-  grid-area: ulsidebar;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
 .pmenu{
-  padding: 0 25px;
+  padding: 0 15px;
+  color: #190482;
+  font-weight: bold;
+  font-family: 'Poppins'
+}
+.paccount{
+  padding: 0 15px;
   color: #190482;
   font-weight: bold;
   font-family: 'Poppins'
@@ -448,7 +463,7 @@ li{
   gap: 10px;
   position: relative;
 }
-.ulmenu::after{
+/* .ulmenu::after{
   content: "";
   position: absolute;
   width: 5px;
@@ -457,25 +472,13 @@ li{
   z-index: 2;
   left: -5px;
   background-color: #6194FF;
-}
+} */
 .ulsettings{
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
   gap: 10px;
-}
-.paccount{
-  padding: 0 25px;
-  color: #190482;
-  font-weight: bold;
-  font-family: 'Poppins'
-}
-.settings{
-  grid-area: settings;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
 }
 .lineof-li{
   display: flex;
@@ -501,42 +504,186 @@ li{
 .linksof-sidebar{
   color: #819CC6;
 }
-.Middelpart{
+.post-middlepart{
   border: 2px solid ;
   grid-area: post;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5,1fr);
+  grid-template-areas: "posttitel" "posttitel" "postcontent" "postcontent" "postcontent";
+}
+.post-titel{
+  /* border: 2px solid #819CC6; */
+  grid-area:posttitel ;
+  margin: 85px 5px 0px 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.post-content{
+  /* border: 2px solid #819CC6; */
+  grid-area:postcontent ;
+  /* padding: 0 20px; */
+  margin: 0 5px;
 }
 .Endpart{
   border: 2px solid ;
   grid-area: search;
 }
-/* ==============================================  testu   =============================== */
-/* .listof-tast{
+.text-post-titel{
+  color: #190482;
+  font-size: 40px;
+}
+.post-links{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+  height: 50px;
+  /* border: 2px solid  #819CC6; */
+}
+.littel-nav-in-the-post{
+  color: #819CC6;
+  text-decoration: none;
+}
+.active{
+  color: #190482;
+  text-decoration: underline;
+}
+.icon-anxiety{
+  width: 10px;
+  color: #819CC6;
+  cursor: pointer;
+}
+.arrow-down{
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  flex-direction: column;
-  background-color: #5c0707;
-  color: #769ddc;
-  text-transform: capitalize;
-  padding: 0 20px;
+  align-items: center;
+  position: absolute;
+  right: 290px;
+  gap: 10px;
+  border: 1px solid #819CBB;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+.anxiety{
+  background: transparent;
+  border: transparent;
+  color: #819CC6;
+  cursor: pointer;
+}
+.posted{
+  height: 295px;
+  overflow-y: scroll;
+  display: grid;
+  grid-template-columns:1fr ;
+  grid-template-rows: repeat(2,1fr) 0.5fr;
+  gap: 10px;
+}
+.postcontainer{
+  border: 2px solid #407cff75;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3,2fr);
+  grid-template-areas:"pp" "cp" "cp"; 
+  padding: 0 20px ;
+}
+.profileofthepost{
+  grid-area: pp;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "imageprofile username time time button button button tree";
+  /* "imageprofile username time time button button button hiden"; */
+  flex-direction: row;
   gap: 15px;
-  
+  justify-content: center;
+  align-items: center;
+}
+.hidecontent{
+  /* grid-area: hiden; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #819CC6;
+  width: 85px;
+  border-radius: 10px;
+  /* position: absolute;
+  right: 280px;
+  bottom: 190px; */
+  padding: 5px;
+  transition: all 2s;
+}
+.text-time-p{
+  grid-area: time;
+}
+.text-username-p{
+grid-area: username;
+}
+.treepoint{
+  grid-area: tree;
+  color: #819CC6;
+  cursor: pointer;
+}
+.image-of-user{
+  width: 30px;
+  grid-area: imageprofile;
+}
+.button-hA{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  grid-area: button;
+}
+.contentpost{
+  grid-area: cp;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  padding: 5px 5px;
+}
+.posted::-webkit-scrollbar{
+  display: none;
+}
+.banxiety{
+  background-color: #FFF3C7;
+    width: 80px;
+    height: 20px;
+    border: transparent;
+    border-radius: 3px;
+    box-shadow: -1px 2px 3px 0px #0000001a;
+    color: #190482;
+    cursor: pointer;
+}
+.heal{
+  background-color: #C2D9FF;
+  width: 80px;
+    height: 20px;
+    border: transparent;
+    border-radius: 3px;
+    box-shadow: -1px 2px 3px 0px #0000001a;
+    color: #190482;
+    cursor: pointer;
+}
+.content-post-text1{
+  color: #190482;
+}
+.content-post-text2{
+  color: #819CC6;
 }
 
-.list-itemof-test{
-  cursor: pointer;
-  transition:  2s all;
+.hidecontianer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
 }
-.list-itemof-test:hover{
-  color: #407BFF;
-}
-.listof-tast::after{
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 20px;
-  z-index: 2;
-  background-color: #769ddc;
-  left: 4px;
-  border-radius: 5px;
-} */

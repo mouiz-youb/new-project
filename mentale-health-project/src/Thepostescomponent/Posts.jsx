@@ -1,14 +1,14 @@
 import React from 'react'
 import Sidebar from "../Thepostescomponent/Sidebar"
-import Middelpart from "../Thepostescomponent/Middelpart"
-import Endpart from "../Thepostescomponent/Endpart"
-
+import PostMiddelpart from "../Thepostescomponent/PostMiddelpart"
+import Endpartpost from "../Thepostescomponent/Endpartpost"
+import Sidebarvx from  "./Sidebarvx"
 function Posts() {
   return (
     <div className="posts-component">
-      <Sidebar/>
-      <Middelpart/>
-      <Endpart/>
+      <Sidebarvx/>
+      <PostMiddelpart/>
+      <Endpartpost/>
     </div>
   )
 }
