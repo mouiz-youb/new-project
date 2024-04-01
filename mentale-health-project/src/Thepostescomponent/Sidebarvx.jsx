@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Themoonidoctor from "../assets/Themoonidoctor.svg";
 import {Link} from  "react-router-dom"
 import { LuPodcast } from "react-icons/lu";
@@ -7,45 +7,59 @@ import { GrTask } from "react-icons/gr";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoNotificationsOutline } from "react-icons/io5";
 function Sidebarvx() {
+    const [linkColor ,setLinkColor]=useState(null)
+    const Activcolor=(link)=>{
+        setLinkColor(link)
+    }
     const  sideBarItems = [
         {
             name :"home",
-            path :"/",
-            icon :<RiHome6Line className="logoofli"/>,
+            path :"/posts",
+            icon :<RiHome6Line 
+            className= {`logoofli ${linkColor == "home" ? "activex1" :"" }`}
+            onClick={ ()=> Activcolor("home")} id='home' />,
+            
         },
         {
             name :"posts",
             path :"/posts",
-            icon :<LuPodcast className="logoofli"/>,
+            icon :<LuPodcast className= {`logoofli ${linkColor == "posts" ? "activex1" :"" }`}
+        onClick={ ()=> Activcolor("posts")} id ="posts"/>,
         },
         {
             name :"podcast",
             path :'/podcast',
-            icon :<GrTask className="logoofli"/>,
+            icon :<GrTask className= {`logoofli ${linkColor == "podcast" ? "activex1" :"" }`}
+        onClick={ ()=> Activcolor("podcast")} id='podcast' />,
         },
         {
             name :"tasks",
             path :"/tasks",
-            icon :<IoSettingsOutline className="logoofli"/>,
+            icon :<IoSettingsOutline className= {`logoofli ${linkColor == "tasks" ? "activex1" :"" }`}
+        onClick={ ()=> Activcolor("tasks")} id='tasks' />,
         },
         {
             name :"ai chat",
-            path :"/login",
-            icon :<IoNotificationsOutline className="logoofli"/>,
+            path :"/tasks",
+            icon :<IoNotificationsOutline className= {`logoofli ${linkColor == "ai chat" ? "activex1" :"" }`}
+        onClick={ ()=> Activcolor("ai chat")} id='ai chat'/>,
         },
     ]
     const sidebarsettings = [
         {
             name :"settings",
-            path :"/",
-            icon :<IoSettingsOutline className="logoofli"/>,
+            path :"/posts",
+            icon :<IoSettingsOutline className= {`logoofli ${linkColor == "settings" ? "activex1" :"" }`}
+        onClick={ ()=> Activcolor("settings")} id='settings' />,
         },
         {
-            name :"Notifications",
-            path :"/",
-            icon :<IoNotificationsOutline className="logoofli"/>,
+            name :"Notifications" ,
+            path :"/posts",
+            icon :<IoNotificationsOutline className= {`logoofli ${linkColor == "Notifications" ? "activex1" :"" }`}
+        onClick={ ()=> Activcolor("Notifications")} id='Notification'/>,
         }
     ]
+    console.log(linkColor)
     return(
         <div className='side-bar1'>
             <div className="profile">
@@ -61,7 +75,10 @@ function Sidebarvx() {
                     {sideBarItems.map((line,index)=>(
                         <div key={index} className='lineof-li'>
                             {line.icon}
-                            <Link className='linksof-sidebar'  to= {line.path}> {line.name} </Link>
+                            <Link 
+                            className= {`linksof-sidebar ${linkColor == line.name ? "activex" : "" }`} 
+                            onClick={ ()=> Activcolor(line.name)}
+                            to= {line.path} htmlFor = {line.name} > {line.name} </Link>
                         </div>
                     ))}
                 </ul>
@@ -73,7 +90,10 @@ function Sidebarvx() {
                         sidebarsettings.map((line,index)=>(
                             <div className='lineof-li' key={index}>
                                 {line.icon}
-                                <Link className='linksof-sidebar'  to="/" > {line.name}</Link>
+                                <Link  
+                                className= {`linksof-sidebar ${linkColor == line.name ? "activex" : "" }`} 
+                                onClick={ ()=> Activcolor(line.name)}
+                                to= {line.name} htmlFor = {line.name} > {line.name}</Link>
                             </div>
                         ))
                     }

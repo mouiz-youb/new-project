@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios"; 
+import Themoonidoctor from "../assets/Themoonidoctor.svg"
+import { SlOptions } from "react-icons/sl";
+import { GoBookmark } from "react-icons/go";
+import { IoIosShareAlt } from "react-icons/io";
+import { GoEyeClosed } from "react-icons/go";
+import { LuPodcast } from "react-icons/lu";
+import { RiHome6Line } from "react-icons/ri";
+import { GrTask } from "react-icons/gr";
+import { IoSettingsOutline } from "react-icons/io5";
+import { IoNotificationsOutline } from "react-icons/io5";
+import { CiPlay1 } from "react-icons/ci";
 function Test() {
   const [name, setName] = useState("");
   const [age, setAge] = useState();
@@ -114,7 +125,7 @@ function Test() {
       setI( "block")
     }
   }
-  const [activeLink, setActiveLink] = useState(null); // Initialize active link state
+  // const [activeLink, setActiveLink] = useState(null); // Initialize active link state
   const [active,setActive]=useState(null)
   const links=[
     {
@@ -140,9 +151,9 @@ function Test() {
     setActive(e)
   }
   // console.log(`${postslinks.className} ${activeLink === e ? "active" : ""}`)
-  const handleLinkClick = (index) => {
-    setActiveLink(index); // Update active link index
-  };
+  // const handleLinkClick = (index) => {
+  //   setActiveLink(index); // Update active link index
+  // };
   const[xcolor,setXcolor]=useState("littel-nav-in-the-post");
   function handelChangez(){
     if(xcolor==="littel-nav-in-the-post"){
@@ -152,11 +163,171 @@ function Test() {
       setXcolor("littel-nav-in-the-post")
     }
   }
+  const hidepart =[
+    {
+      icon :<GoBookmark className='iconhide'/>,
+      name:"save"
+    },
+    {
+      icon :<IoIosShareAlt className='iconhide'/>,
+      name:"share"
+    },
+    {
+      icon :<GoEyeClosed className='iconhide'/>,
+      name:"hide"
+    },
+  ]
+  const testpostnav =[
+    {
+      img :Themoonidoctor,
+      username: "username",
+      timeofposting :"time of posting ",
+      icon :<SlOptions />,
+      heal :"heal",
+      anxiety :"anxiety"
+    }
+  ]
+  const [activeLink, setActiveLink] = useState(null);
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+  const [xx,setXx]=useState(null);
+  const colorchanges =(link)=>{
+    setXx(link)
+  }
+  const  sideBarItems = [
+    {
+        name :"home",
+        path :"#",
+        icon :<RiHome6Line className= {`logoofli ${xx == "home" ? "activx" :"" }`}
+        onClick={ ()=> colorchanges("home")} htmlFor ="home"/>,
+    },
+    {
+        name :"posts",
+        path :"#",
+        icon :<LuPodcast className= {`logoofli ${xx == "posts" ? "activx"  :""}`}
+        onClick={ ()=> colorchanges("posts")} htmlFor =" posts"  /> ,
+    },
+    {
+        name :"podcast",
+        path :'#',
+        icon :<GrTask className= {`logoofli ${xx == "podcast" ? "activx"  :""}`}
+        onClick={ ()=> colorchanges("podcast")} htmlFor ="podcast"/>,
+    },
+    {
+        name :"tasks",
+        path :"#",
+        icon :<IoSettingsOutline className= {`logoofli ${xx == "tasks" ? "activex1"  :""}`}
+        onClick={ ()=> colorchanges("tasks")} htmlFor ="tasks"
+        />,
+    },
+    {
+        name :"ai chat",
+        path :"#",
+        icon :<IoNotificationsOutline className={`logoofli ${xx == "ai chat " ? "activx"  :""}`}
+        onClick={ ()=> colorchanges("ai chat")} htmlFor ="ai chat"/>,
+    },
+]
+console.log("xx",xx)
 // Update active link index
   return (
     
     <div>
-
+        <div className='ulsidebar'>
+          <p className="pmenu">menu</p>
+            <ul className='ulmenu'>
+              {sideBarItems.map((line,index)=>(
+                <div key={index} className='lineof-li'>
+                {line.icon}
+                <Link 
+                  className= {`linksof-sidebar ${xx == line.name ? "activx" : "" }`} 
+                  onClick={ ()=> colorchanges(line.name)}
+                  to= {line.path} id = {line.name}> {line.name} </Link>
+                </div>
+              ))}
+            </ul>
+        </div>
+      <div className="sidebartest">
+        <div className= {`sidetest ${xx == "home" ? "activx" : "" }`} 
+        onClick={ ()=> colorchanges("home")}><a href="#" style={{textDecoration :"none" ,
+        color: "#A7C7F9",}}>home</a></div>
+        <div className= {`sidetest ${xx == "about" ? "activx" :  ""}`} 
+        onClick={ ()=> colorchanges("about")}><a href="#" style={{textDecoration :"none" ,
+        color: "#A7C7F9",}}>about us</a></div>
+        <div className= {`sidetest ${xx == "contact" ? "activx" : "" }`} 
+        onClick={ ()=> colorchanges("contact")}><a href="#" style={{textDecoration :"none" ,
+        color: "#A7C7F9",}}>contact us </a></div>
+        <div className= {`sidetest ${xx == "posts" ? "activx" :  ""}`} 
+        onClick={ ()=> colorchanges("posts")}><a href="#" style={{textDecoration :"none" ,
+        color: "#A7C7F9",}}>posts</a></div>
+        <div className= {`sidetest ${xx == "tasks" ? "activx" :  ""}`} 
+        onClick={ ()=> colorchanges("tasks")}><a href="#" style={{textDecoration :"none" ,
+        color: "#A7C7F9",}}>tasks</a></div>
+      </div>
+      <div className="sidebar">
+      <div
+        className={`sidebar-link ${activeLink === 'home' ? 'active' : ''}`}
+        onClick={() => handleLinkClick('home')}
+      >
+        <a href="#">Home</a>
+      </div>
+      <div
+        className={`sidebar-link ${activeLink === 'about' ? 'active' : ''}`}
+        onClick={() => handleLinkClick('about')}
+      >
+        <a href="#">About Us</a>
+      </div>
+      <div
+        className={`sidebar-link ${activeLink === 'contact' ? 'active' : ''}`}
+        onClick={() => handleLinkClick('contact')}
+      >
+        <a href="#">contact Us</a>
+      </div>
+    </div>
+        {
+          testpostnav.map((item,index)=>(
+            <div key={index}className="test">
+              <img src={item.img} alt="" style={{width :"30px"}}  />
+              <p> {item.username} </p>
+              <p> {item.timeofposting} </p>
+              <div>
+                <button> {item.heal} </button>
+                <button> {item.anxiety} </button>
+              </div>
+              {item.icon}
+              <div style={{
+                    display :"flex",
+                    justifyContent :"center",
+                    alignItems :"center",
+                    flexDirection :"column",
+                    gap :"5px",
+                    width :"100px",
+                    border :"1px solid black",
+                    position :"relative",
+                    left: "-24%",
+                    top: "45px",
+                  }}>
+                    
+                {
+                  hidepart.map((line,index)=>(
+                  <div key={index} style={{
+                    display :"flex",
+                    justifyContent :"center",
+                    alignItems :"center",
+                    flexDirection :"row",
+                    gap :"5px"
+                  }}>
+                    {line.icon}
+                    <p> {line.name} </p>
+                  </div>
+                  ))
+                }
+              </div>
+            </div>
+              
+          ))
+        }
+    
       <div style={{
         width :"200px",
         height :"100px",
@@ -166,6 +337,45 @@ function Test() {
              In provident aspernatur eveniet corporis quisquam ab 
              architecto ullam temporibus minus? Maxime voluptatem 
              magnam sint atque repudiandae beatae ad ratione quas a.
+      </div>
+      {/* =========================================================================== */}
+      <div className="testconpodcast">
+        <div style={{border :"2px solid "}} className="podcastinposttets">
+          <div className="void1"></div>
+          <div className="content">
+          <div className="sudiv"><p className="sup">X</p></div>
+            <h3 className="h3">podcast name</h3>
+            <p className="pd">podcast  description</p>
+            <div className="btns">
+              <p>timeofposting</p>
+              <CiPlay1/>
+            </div>
+          </div>
+        </div>
+        <div style={{border :"2px solid "}} className="podcastinposttets">
+          <div className="void1"></div>
+          <div className="content">
+          <div className="sudiv"><p className="sup">X</p></div>
+            <h3 className="h3">podcast name</h3>
+            <p className="pd">podcast  description</p>
+            <div className="btns">
+              <p>timeofposting</p>
+              <CiPlay1/>
+            </div>
+          </div>
+        </div>
+        <div style={{border :"2px solid "}} className="podcastinposttets">
+          <div className="void1"></div>
+          <div className="content">
+          <div className="sudiv"><p className="sup">X</p></div>
+            <h3 className="h3">podcast name</h3>
+            <p className="pd">podcast  description</p>
+            <div className="btns">
+              <p>timeofposting</p>
+              <CiPlay1/>
+            </div>
+          </div>
+        </div>
       </div>
       <div>
       {postslinks.map((link, index) => (
@@ -193,6 +403,10 @@ function Test() {
       ))}
     </div>
       <div>
+        <div>
+        <label htmlFor="n">hello :...............</label>
+        <input type="checkbox" id="n" />
+        </div>
       {postslinks.map((link, index) => (
         <Link
           key={index}
@@ -297,3 +511,8 @@ function Test() {
 }
 
 export default Test;
+// const updateColor = () => {
+//   setCar(previousState => {
+//     return { ...previousState, color: "blue" }
+//   });
+// }

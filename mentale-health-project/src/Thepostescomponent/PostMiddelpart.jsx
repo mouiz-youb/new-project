@@ -71,6 +71,10 @@ function PostMiddelpart() {
       setHide( "none");
     }
   }
+  const [hidex,setHideX] = useState("none");
+  const handelclick=(index)=>{
+    setHideX(index);
+  }
   return (
     <div className='post-middlepart'>
       <div className="post-titel">
@@ -103,7 +107,8 @@ function PostMiddelpart() {
                   <SlOptions className='treepoint' onClick={hendelSidplay}/>
                   <div className="hidecontent" style={{"display": hide}}>
                     {hidepart.map((item,index) =>(
-                      <div className="hidecontianer"key={index} >
+                      <div className="hidecontianer"key={index}
+                      onClick={()=>handelclick(item.id)}>
                       {item.icon}
                       <p className="itemname" >{item.name}</p>
                       </div>
