@@ -6,6 +6,9 @@ import Themoonidoctor from "../assets/Themoonidoctor.svg"
 import { GoBookmark } from "react-icons/go";
 import { IoIosShareAlt } from "react-icons/io";
 import { GoEyeClosed } from "react-icons/go";
+import { FaRegCommentAlt } from "react-icons/fa";
+import { FcLike } from "react-icons/fc";
+import { FaHeart } from "react-icons/fa";
 
 function PostMiddelpart() {
   const hidepart =[
@@ -32,10 +35,15 @@ function PostMiddelpart() {
       className:"littel-nav-in-the-post active"
     }
   ]
+  const [counter,setCounter]=useState(0)
   const postescontent =[
     {
       img :Themoonidoctor,
       usernmae :"usename",
+      iconLike :<FaHeart className='icon-like'style={{color :"#819CC6"}}/>,
+      iconComment :<FaRegCommentAlt className='icon-comment' style={{color :"#819CC6"}}/>,
+      likeCounter :counter,
+      commentCounter:0,
       timeofposting:"time of posting",
       content1 :"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus dolore impedit quae ad aliquid accusantium eaque excepturi deleniti, recusandae quas aliquam distinctio, praesentium dicta iusto incidunt assumenda aut exercitationem.",
       content2 :"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus dolore impedit quae ad aliquid accusantium eaque excepturi deleniti, recusandae quas aliquam distinctio, praesentium dicta iusto incidunt assumenda aut exercitationem.",
@@ -43,6 +51,10 @@ function PostMiddelpart() {
     {
       img :Themoonidoctor,
       usernmae :"usename",
+      iconLike :<FaHeart className='icon-like'style={{color :"#819CC6"}}/>,
+      iconComment :<FaRegCommentAlt className='icon-comment' style={{color :"#819CC6"}}/>,
+      likeCounter :counter,
+      commentCounter:0,
       timeofposting:"time of posting",
       content1 :"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus dolore impedit quae ad aliquid accusantium eaque excepturi deleniti, recusandae quas aliquam distinctio, praesentium dicta iusto incidunt assumenda aut exercitationem.",
       content2 :"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus dolore impedit quae ad aliquid accusantium eaque excepturi deleniti, recusandae quas aliquam distinctio, praesentium dicta iusto incidunt assumenda aut exercitationem.",
@@ -50,6 +62,10 @@ function PostMiddelpart() {
     {
       img :Themoonidoctor,
       usernmae :"usename",
+      iconLike :<FaHeart className='icon-like'style={{color :"#819CC6"}}/>,
+      iconComment :<FaRegCommentAlt className='icon-comment' style={{color :"#819CC6"}}/>,
+      likeCounter :counter,
+      commentCounter:0,
       timeofposting:"time of posting",
       content1 :"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus dolore impedit quae ad aliquid accusantium eaque excepturi deleniti, recusandae quas aliquam distinctio, praesentium dicta iusto incidunt assumenda aut exercitationem.",
       content2 :"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus dolore impedit quae ad aliquid accusantium eaque excepturi deleniti, recusandae quas aliquam distinctio, praesentium dicta iusto incidunt assumenda aut exercitationem.",
@@ -57,27 +73,31 @@ function PostMiddelpart() {
     {
       img :Themoonidoctor,
       usernmae :"usename",
+      iconLike :<FaHeart className='icon-like'style={{color :"#819CC6"}}/>,
+      iconComment :<FaRegCommentAlt className='icon-comment' style={{color :"#819CC6"}}/>,
+      likeCounter :counter,
+      commentCounter:0,
       timeofposting:"time of posting",
       content1 :"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus dolore impedit quae ad aliquid accusantium eaque excepturi deleniti, recusandae quas aliquam distinctio, praesentium dicta iusto incidunt assumenda aut exercitationem.",
       content2 :"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat minus dolore impedit quae ad aliquid accusantium eaque excepturi deleniti, recusandae quas aliquam distinctio, praesentium dicta iusto incidunt assumenda aut exercitationem.",
     }
   ]
-  const [hide,setHide]=useState("none");
-  const hendelSidplay=()=>{
-    if(hide==="none"){
-      setHide("block");
+  const [hide,setHide]=useState(null);
+  const hiddenFunction = (index)=>{
+    if(hide===null){
+      setHide(index)
     }
     else{
-      setHide( "none");
+      setHide(null)
     }
   }
-  const [hidex,setHideX] = useState("none");
-  const handelclick=(index)=>{
-    setHideX(index);
-  }
+  console.log("the value of the counter is " ,counter);
+  console.log("the value of the likecounter is " ,postescontent[0].likeCounter);
   return (
     <div className='post-middlepart'>
+      {/* <div className='logo-container'></div> */}
       <div className="post-titel">
+        <div>logo of Relivo</div>
         <p className="text-post-titel">
           Find Relatable Posts
         </p>
@@ -104,11 +124,12 @@ function PostMiddelpart() {
                     <button className='heal'>heal</button>
                     <button className='banxiety'>Anxiety</button>
                   </div>
-                  <SlOptions className='treepoint' onClick={hendelSidplay}/>
-                  <div className="hidecontent" style={{"display": hide}}>
+                  <SlOptions className='treepoint'onClick={()=>hiddenFunction(index)} />
+                  <div className={`hidecontent ${ hide == index ? "showcontent" : "" }`}
+                  >
+                    {console.log(hide)}
                     {hidepart.map((item,index) =>(
-                      <div className="hidecontianer"key={index}
-                      onClick={()=>handelclick(item.id)}>
+                      <div className="hidecontianer"key={index}>
                       {item.icon}
                       <p className="itemname" >{item.name}</p>
                       </div>
@@ -116,8 +137,20 @@ function PostMiddelpart() {
                   </div>
                 </div>
                 <div className='contentpost'>
-                  <p className='content-post-text1'> {item.content1} </p>
-                  <p className='content-post-text2'> {item.content2} </p>
+                  <div className='content-post'>
+                    <p className='content-post-text1'> {item.content1} </p>
+                    <p className='content-post-text2'> {item.content2} </p>
+                  </div>
+                  <div className="button-like-comment" key={index}>
+                    <div className="like" >
+                      {item.iconLike}
+                      <p style={{color :"#819CC6"}}>{item.likeCounter}</p>
+                    </div>
+                    <div className="comment">
+                      {item.iconComment}
+                      <p style={{color :"#819CC6"}}>{item.commentCounter}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
           ))}

@@ -19,34 +19,33 @@ function Signup() {
       setPassword1("password");
     }
   }
-  const [username, setUsername] = useState("");
-  const [useremail, setUserEmail] = useState("");
-  const [userpassword, setUserpassword] = useState("");
-  const [value, setValue] = useState({
-    email: "",
-    password: "",
-    username: "",
-  });
-  // function  addaccount(){
-  //   setValue({
-  //     email :  useremail ,
-  //     password : userpassword ,
-  //     username : username
-  //   })
-  // }
-  const addaccount = ()=>{
-    setValue({
-      email :  useremail ,
-      password : userpassword ,
-      username : username
-    })
+  const [inputUsername,setInputUsername] = useState("")
+  const [inputEmail,setInputEmail] = useState("")
+  const [inputPassword,setInputPassword] = useState("")
+  const [users,setUsers]=useState([]);
+  const handelChangeUsername =(e)=>{
+      setInputUsername(e.target.value)
   }
-  console.log(username)
-  console.log(value);
-  // function go(event){
-  //   setValue(event.target.value.email)
-  // }
-
+  const handelChangeEmail =(e)=>{
+      setInputEmail(e.target.value)
+  }
+  const handelChangePassword =(e)=>{
+      setInputPassword(e.target.value)
+  }
+  const handelCreatUser =(e)=>{
+      if(e.key === "Enter"){
+          if(inputUsername && inputEmail && inputPassword){
+              setUsers([...users,{
+                  username :inputUsername,
+                  email :inputEmail,
+                  password :inputPassword,
+              }])
+          }
+          setInputUsername("");
+          setInputEmail("");
+          setInputPassword("");
+      }
+  }
   return (
     <div className="contianerlogin">
       <img src={circle1} alt="" className="cerclelogin1" />
@@ -71,20 +70,25 @@ function Signup() {
             type="text"
             placeholder="user name"
             className="input-signup"
-            onChange={(e) => setUsername(e.target.value)}
-            value={username}
+            onChange={handelChangeUsername}
+            onKeyDown={handelCreatUser}
+            value={inputUsername}
           />
           <input
             type="email"
             placeholder="email address"
             className="input-signup"
-            onChange={(e) => setUserEmail(e.target.value)}
+            onChange={handelChangeEmail}
+            onKeyDown={handelCreatUser}
+            value={inputEmail}
           />
           <input
             type={`${password1}`}
             placeholder="password (8 characters)"
             className="input-signup"
-            onChange={(e) => setUserpassword(e.target.value)}
+            onChange={handelChangePassword}
+            onKeyDown={handelCreatUser}
+            value={inputPassword}
           />
           <img
             src={el3ayen}
@@ -99,7 +103,7 @@ function Signup() {
               Policy
             </label>
           </div>
-          <button className="signup" onClick={addaccount}>Sign up</button>
+          <button className="signup" >Sign up</button>
           <p className="orsignupwith">Or sign up with </p>
           <div className="faceorgoolge1">
             <button className="button-of-facebook">

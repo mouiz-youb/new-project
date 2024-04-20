@@ -2,7 +2,8 @@ import React from 'react'
 import { IoNotificationsOutline } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import { CiPlay1 } from "react-icons/ci";
-// import circlepost from "../assets/circlepost.svg"
+// import { useState } from 'react';
+import { useState } from 'react';
 import Circlepost from "../assets/circleofpost.svg"
 const lastsearch =[
   {
@@ -42,12 +43,21 @@ const podcastlist =[
   },
 ]
 function Endpart() {
+  const[search,setSearch]=useState("");
+  const handelSearch=(e)=>{
+    setSearch(e.target.value);
+  }
   return (
     <div className='Endpart'>
       <div className="container-input-searchbar">
         <IoNotificationsOutline className='notificationIcon-of-SearchBar' />
         <div className='input-searchbar'>
-          <input type="text" placeholder='Search'  className='input-box-for-SearchBar'/>
+          <input 
+          type="text" 
+          placeholder='Search'  
+          className='input-box-for-SearchBar'
+          onChange={handelSearch}
+          value={search}/>
           <IoIosSearch className='search-icon-of-input'/>
         </div>
       </div>

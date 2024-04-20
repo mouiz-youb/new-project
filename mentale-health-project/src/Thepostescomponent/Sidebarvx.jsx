@@ -14,7 +14,7 @@ function Sidebarvx() {
     const  sideBarItems = [
         {
             name :"home",
-            path :"/posts",
+            path :"/home",
             icon :<RiHome6Line 
             className= {`logoofli ${linkColor == "home" ? "activex1" :"" }`}
             onClick={ ()=> Activcolor("home")} id='home' />,

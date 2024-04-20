@@ -1,13 +1,14 @@
 import React from 'react'
-import TasksMiddelpart from './TasksMiddelpart'
+import TaskMiddelpart1 from './TaskMiddelpart1'
+// import TasksMiddelpart from './TasksMiddelpart'
 import Sidebarvx from  "./Sidebarvx"
-import Endpartpost from './Endpartpost'
+import "../App.css"
 function Tasks() {
   return (
-    <div className="posts-component">
+    <div className="tasks-component">
     <Sidebarvx/>
-    <TasksMiddelpart/>
-    <Endpartpost/>
+    <TaskMiddelpart1/>
+    {/* <TasksMiddelpart/> */}
     </div>
   )
 }

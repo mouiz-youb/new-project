@@ -18,15 +18,34 @@ function Loginpage() {
       setPassword("password");
     }
   }
-  const [value, setValue] = useState({
-    email: "",
-    password: "",
-    username: "",
-  });
-  function go(event){
-    setValue(event.target.value.email)
+  const [inputUsername,setInputUsername]= useState("");
+  const [inputEmail,setInputEmail]= useState("");
+  const [inputPassword,setInputPassword]= useState("");
+  const [user,setUser]= useState([]);
+  const handelChangeUsername =(e)=>{
+    setInputUsername(e.target.value)
+  }
+  const handelChangeEmail =(e)=>{
+    setInputEmail(e.target.value)
+  }
+  const handelChangePassword =(e)=>{
+    setInputPassword(e.target.value)
+  }
+  const CreatUser =(e)=>{
+  if(e.key === "Enter"){
+    if(inputUsername && inputEmail && inputPassword){
+      setUser([...user,{
+        username : inputUsername ,
+        email: inputEmail,
+        password: inputPassword,
+      }])
+      setInputUsername("");
+      setInputPassword("");
+      setInputEmail("")
+    }
   }
 
+  }
   return (
     <div className="contianerlogin">
       <img src={circle1} alt="" className="cerclelogin1" />
@@ -49,14 +68,19 @@ function Loginpage() {
             type="email"
             placeholder="Email Address or User Name"
             className="login-input"
-            // value={go()}
             required
+            onChange={handelChangeEmail}
+            onKeyDown={CreatUser}
+            value={inputEmail}
           />
           <input
             type={`${password}`}
             placeholder="Password"
             className="login-input"
             required
+            onChange={handelChangePassword}
+            onKeyDown={CreatUser}
+            value={inputPassword}
           />
           <img
             src={el3ayen}

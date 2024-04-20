@@ -1,0 +1,43 @@
+// thepost page {
+//     the-hide-container function  "is done"
+//     the-handel-change-color funciton 
+//     the-counter-funciton
+//     the-delet-element-function
+//     the-search-bar-function    "is done"
+// }
+{/* <div className='RemiderMiddelpart'>
+<div className='nav1'>
+    <div className="logo-text">logo part</div>
+    <div className="container-searchbar">
+        <IoNotificationsOutline className='notificationIcon-of-SearchBar' />
+        <div className='input-searchbar'>
+            <input 
+            type="text" 
+            placeholder='Search'  
+            className='input-box-for-SearchBar'
+            onChange={handelSearch}
+            value={search}/>
+            <IoIosSearch className='search-icon-of-input'/>
+        </div>
+    </div>
+</div>
+<div className='descreption1'>
+    <div className='line1'>
+        <p style={{color :"#190482",fontSize:"35px",fontWeight :"bolder"}}>Welcome back to your tasks </p>
+        <img src= {Monkey}  alt="" />
+    </div>
+    <div className='line2'>
+        <p className='text-of-the-task'>
+        We really do ! , At Relievo we're like podcast matchmakers,
+        finding your perfect listen from crime capers to comedy tailored
+        just for you
+        </p>
+    </div>
+</div>
+<div className='nav-task1'>
+    <Link className='links-of-tasks-page'>All tasks</Link>
+    <Link className='links-of-tasks-page' to= "/tasks/remider">Remider</Link>
+    <Link className='links-of-tasks-page'>Therapist space</Link>
+</div>
+<div className='remider'></div>
+</div> */}
